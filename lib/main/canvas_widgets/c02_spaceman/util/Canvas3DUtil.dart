@@ -1,10 +1,7 @@
 import 'dart:ui';
 import 'dart:math';
-
 import 'Point3d.dart';
-
 class Canvas3DUtil{
-
 
   // Point3d 绕x轴旋转角度后，返回新的Point3d   顺时针
   Point3d getRotateXPoint(double rotateAngle, Point3d src) {

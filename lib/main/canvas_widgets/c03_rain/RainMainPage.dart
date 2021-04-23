@@ -8,15 +8,17 @@ import 'ParticleManange.dart';
 import 'WorldRender.dart';
 import 'dart:ui' as ui;
 
-class C12Rain extends StatefulWidget {
+class RainMainPage extends StatefulWidget {
   @override
-  _WorldState createState() => _WorldState();
+  _RainMainPageState createState() => _RainMainPageState();
 }
 
-class _WorldState extends State<C12Rain> with SingleTickerProviderStateMixin {
+class _RainMainPageState extends State<RainMainPage>
+    with SingleTickerProviderStateMixin {
   AnimationController _controller;
   ParticleManage pm = ParticleManage();
   ui.Image _src;
+
   @override
   void initState() {
     super.initState();
@@ -24,7 +26,9 @@ class _WorldState extends State<C12Rain> with SingleTickerProviderStateMixin {
     _controller = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
-    ) ..addListener(pm.tick)..repeat();
+    )
+      ..addListener(pm.tick)
+      ..repeat();
   }
 
   void _loadImage() async {
@@ -36,26 +40,29 @@ class _WorldState extends State<C12Rain> with SingleTickerProviderStateMixin {
   Future<ui.Image> loadImageFromAssets(String path) async {
     ByteData data = await rootBundle.load(path);
     List<int> bytes =
-    data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+        data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
     return decodeImageFromList(bytes);
   }
 
-  initParticleManage(){
+  initParticleManage() {
     pm.size = Size(600, 400);
     pm.image = _src;
-    for(var i=0;i<160;i++){
+    for (var i = 0; i < 160; i++) {
       Random random = Random();
       pm.addParticle(Particle(
-          x: pm.size.width/60*i,
-          y: 0,
-          vx: 1 * random.nextDouble() * pow(-1, random.nextInt(20)),
-          vy:20 * random.nextDouble() + 1,
-          ));
+        x: pm.size.width / 60 * i,
+        y: 0,
+        vx: 1 * random.nextDouble() * pow(-1, random.nextInt(20)),
+        vy: 20 * random.nextDouble() + 1,
+      ));
     }
-
   }
 
-  Color randomColor({int limitR = 0, int limitG = 0, int limitB = 0,}){
+  Color randomColor({
+    int limitR = 0,
+    int limitG = 0,
+    int limitB = 0,
+  }) {
     Random random = Random();
     var r = limitR + random.nextInt(256 - limitR); //红值
     var g = limitG + random.nextInt(256 - limitG); //绿值
@@ -69,7 +76,7 @@ class _WorldState extends State<C12Rain> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  theWorld(){
+  theWorld() {
     if (_controller.isAnimating) {
       _controller.stop();
     } else {
@@ -79,11 +86,17 @@ class _WorldState extends State<C12Rain> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: theWorld,
-      child: CustomPaint(
-        size: pm.size,
-        painter: WorldRender(manage: pm),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("雨"),
+        centerTitle: true,
+      ),
+      body: GestureDetector(
+        onTap: theWorld,
+        child: CustomPaint(
+          size: pm.size,
+          painter: WorldRender(manage: pm),
+        ),
       ),
     );
   }

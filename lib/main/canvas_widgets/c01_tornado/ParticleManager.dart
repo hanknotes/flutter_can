@@ -2,8 +2,9 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_can/c13_tornado/AxisManager.dart';
-import 'package:flutter_can/c13_tornado/Particle.dart';
+
+import 'AxisManager.dart';
+import 'Particle.dart';
 
 class ParticleManager extends ChangeNotifier {
   AxisManager am;

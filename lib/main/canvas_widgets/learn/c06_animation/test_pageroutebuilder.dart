@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_can/c06_animation/test_animateTweens.dart';
+import 'package:flutter_can/main/canvas_widgets/learn/c06_animation/test_animateTweens.dart';
 
 class TestPageRouteBuilder extends StatefulWidget {
   @override

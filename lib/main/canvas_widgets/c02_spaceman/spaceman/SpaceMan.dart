@@ -1,9 +1,9 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_can/c14_3d/util/Canvas3DUtil.dart';
-import 'package:flutter_can/c14_3d/util/Point3d.dart';
-import 'package:flutter_can/c14_3d/spaceman/Cuboid.dart';
+import 'package:flutter_can/main/canvas_widgets/c02_spaceman/util/Canvas3DUtil.dart';
+
+import 'Cuboid.dart';
 
 // 太空人
 class SpaceMan extends CustomPainter with Canvas3DUtil {

@@ -1,8 +1,9 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:flutter_can/c14_3d/util/Canvas3DUtil.dart';
-import 'package:flutter_can/c14_3d/util/Point3d.dart';
+import 'package:flutter_can/main/canvas_widgets/c02_spaceman/util/Canvas3DUtil.dart';
+import 'package:flutter_can/main/canvas_widgets/c02_spaceman/util/Point3d.dart';
+
 
 class Cuboid with Canvas3DUtil {
   double x, y, z, long, width, height;

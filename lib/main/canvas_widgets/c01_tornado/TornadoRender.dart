@@ -1,9 +1,8 @@
 import 'dart:ui';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_can/c13_tornado/AxisManager.dart';
-import 'package:flutter_can/c13_tornado/Particle.dart';
 
+import 'Particle.dart';
 import 'ParticleManager.dart';
 
 class TornadoRender extends CustomPainter{

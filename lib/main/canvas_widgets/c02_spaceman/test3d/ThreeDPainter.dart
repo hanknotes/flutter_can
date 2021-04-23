@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_can/c14_3d/util/Canvas3DUtil.dart';
-import 'package:flutter_can/c14_3d/util/Point3d.dart';
+import 'package:flutter_can/main/canvas_widgets/c02_spaceman/util/Canvas3DUtil.dart';
+import 'package:flutter_can/main/canvas_widgets/c02_spaceman/util/Point3d.dart';
 
 // 画长方体，并沿着x\y\z 或指定线旋转
 class ThreeDPainter extends CustomPainter with Canvas3DUtil {

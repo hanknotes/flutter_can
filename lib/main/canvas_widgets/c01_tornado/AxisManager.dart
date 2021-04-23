@@ -1,8 +1,5 @@
 import 'dart:math';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_can/c13_tornado/Particle.dart';
 
 // 龙卷风的中轴线，继承ChangeNotifier，是为了回调tick()方法，每一帧都调用
 class AxisManager extends ChangeNotifier {

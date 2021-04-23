@@ -4,12 +4,12 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 // 汽车仪表板
-class TestDashBoard extends StatefulWidget {
+class CarDashBoardMainPage extends StatefulWidget {
   @override
-  _TestBarState createState() => _TestBarState();
+  _CarDashBoardMainPageState createState() => _CarDashBoardMainPageState();
 }
 
-class _TestBarState extends State<TestDashBoard>
+class _CarDashBoardMainPageState extends State<CarDashBoardMainPage>
     with SingleTickerProviderStateMixin {
   AnimationController _controller;
   @override
